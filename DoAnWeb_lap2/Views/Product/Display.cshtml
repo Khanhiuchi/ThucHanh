@@ -1,0 +1,36 @@
+﻿@model DoAnWeb_lap2.Models.Product
+
+<h2>Thông Tinh Sản Phẩm</h2>
+
+@* <div>
+    <h3>Price: @Model.Price</h3>
+    <p>@Model.Description</p>
+    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <img src="@Model.ImageUrl" alt="Product Image" style="max-width: 200px;" />
+    }
+</div> *@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="Product Image" class="img-fluid style="max-width: 500px;" />
+            }
+            
+            
+        </div>
+        <div class="col-md-6">
+            <h3>@Model.Name</h3>
+            <p>Price: @Model.Price</p>
+            <p>@Model.Description</p>
+            <a asp-action="Index" class="btn btn-primary">Quay lại</a>
+            <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+            <a class="btn btn-primary">Mua</a>
+            <a class="btn btn-primary">Thêm vào giỏ hàng</a>
+        </div>
+    </div>
+</div>
+
+
